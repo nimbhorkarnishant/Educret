@@ -1,7 +1,7 @@
 import React,{ useState,useEffect } from 'react'
+import Link from 'next/link'
 
-
-export default function navbar() {
+export default function navbar({nav_status}) {
     const [isOn, setIsOn] = useState(false);
     const [isShow, setIsShow] = useState(false);
     useEffect(() => {
@@ -18,6 +18,7 @@ export default function navbar() {
         document.getElementById("mobile-menu").style.display="none";
       }
     });
+  
 
     return (
         // <!-- This example requires Tailwind CSS v2.0+ -->
@@ -42,10 +43,10 @@ export default function navbar() {
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <a href="#" className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tasks</a>
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
+                <Link href="/"><a className={"bg-gray-900 text-white"+" "+"hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"}>Dashboard</a></Link>
+                <Link href="#"><a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tasks</a></Link>
+                <Link href="/courses/course"><a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Courses</a></Link>
+                <Link href="#"><a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a></Link>
               </div>
             </div>
           </div>
@@ -74,10 +75,10 @@ export default function navbar() {
       </div>
       <div className="sm:hidden" id="mobile-menu"  >
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
-          <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tasks</a>
-          <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-          <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+          <Link href="/"><a href="#" className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a></Link>
+          <Link href="#"><a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Tasks</a></Link>
+          <Link href="/courses/course"><a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Courses</a></Link>
+          <Link href="#"><a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a></Link>
         </div>
       </div>
     </nav>
